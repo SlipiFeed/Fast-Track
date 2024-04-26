@@ -1,0 +1,41 @@
+RRC DEFINITIONS AUTOMATIC TAGS ::=
+
+BEGIN
+
+RRCSetupRequest ::= SEQUENCE
+{
+    rrcSetupRequest RRCSetupRequest-IEs
+}
+
+RRCSetupComplete ::= SEQUENCE
+{
+    rrcSetupComplete RRCSetupComplete-IEs
+}
+
+RRCSetupComplete-IEs ::= SEQUENCE
+{
+    ue-Identity InitialUE-Identity,
+    spare BIT STRING (SIZE (1))
+}
+
+RRCSetupRequest-IEs ::= SEQUENCE
+{
+    ue-Identity InitialUE-Identity,
+    establishmentCause EstablishmentCause,
+    spare BIT STRING (SIZE (1))
+}
+
+InitialUE-Identity ::= CHOICE 
+{
+    ng-5G-S-TMBI-part1 BIT STRING (SIZE (39)),
+    randomValue BIT STRING (SIZE (39)) 
+}
+
+EstablishmentCause ::= ENUMERATED
+{
+    emergency, highPriorityAccess, mt-Access, mo-Signalling, mo-Data, 
+    mo-VoiceCall, mo-VideoCall, mo-SMS, mps-PriorityAccess, mcs-PriorityAccess,
+    spare6, spare5, spare4, spare3, spare2, spare1
+}
+
+END
