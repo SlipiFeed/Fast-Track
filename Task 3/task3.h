@@ -246,7 +246,7 @@ public:
         return remove(head_);
     }
 };
-#endif
+#endif //LIST_WITHOUT_TAIL
 
 #ifndef LIST_WITHOUT_TAIL
 #define LIST_WITH_TAIL
@@ -515,4 +515,4 @@ public:
         return true;
     }
 };
-#endif
+#endif //LIST_WITH_TAIL
